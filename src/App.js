@@ -16,18 +16,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="./src/img/NuKenzie.svg" alt="" />
+        <img src=".././/img/NuKenzie.svg" alt="" />
         <button>Início</button>
       </header>
       <main>
-        <div className="container-form">
-          <Form
-            listTransactions={listTransactions}
-            handleTransactions={handleTransactions}
-          />
+        <div className="container-form-total">
+          <div className="container-form">
+            <Form
+              listTransactions={listTransactions}
+              handleTransactions={handleTransactions}
+            />
+          </div>
+          <TotalMoney listTransactions={listTransactions} />
         </div>
-        <TotalMoney listTransactions={listTransactions} />
-        <List listTransactions={listTransactions} />
+        <div className="container-list">
+          <List listTransactions={listTransactions} />
+        </div>
       </main>
     </div>
   );

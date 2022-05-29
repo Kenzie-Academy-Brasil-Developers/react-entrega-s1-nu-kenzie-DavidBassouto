@@ -1,17 +1,18 @@
 .extrato {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   max-width: 560px;
 }
 .extrato-cabecalho {
   width: 100%;
-  height: 30px;
+  height: 50px;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .extrato-cabecalho--descricao {
-  width: 43%;
+  width: 65%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -44,10 +45,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   background: #e9ecef;
   border: 1.4px solid #e9ecef;
   border-radius: 8px;
+  font-weight: normal;
 }
 .extrato-cabecalho--categoria button:hover {
   background-color: #fd377e;
