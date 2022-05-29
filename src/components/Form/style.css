@@ -1,0 +1,92 @@
+.container-form {
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid rgba(233, 236, 239, 1);
+  box-sizing: border-box;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+form{
+  gap: 10px;
+}
+
+.descricao {
+  width: 89%;
+  height: 50px;
+  padding: 0px, 16px, 0px, 16px;
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 10px;
+}
+
+small {
+  height: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #868e96;
+}
+label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  color: #212529;
+}
+.container-valor {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-valor--tipo {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-valor--tipo input {
+  height: 40px;
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 8px;
+}
+
+.container-valor--tipo select {
+  height: 40px;
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 8px;
+}
+
+.container-form button {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 20px;
+  gap: 10px;
+  height: 48px;
+  background: #fd377e;
+  border: 2px solid #fd377e;
+  border-radius: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #ffffff;
+}
