@@ -39,7 +39,7 @@ function Form({ handleTransactions }) {
           <label>Tipo de Valor</label>
           <select onChange={(event) => setValueType(event.target.value)}>
             <option>Entrada</option>
-            <option>Saída</option>
+            <option>Despesas</option>
           </select>
         </div>
       </div>
@@ -51,7 +51,7 @@ function Form({ handleTransactions }) {
             value: valueValue,
           };
           switch (obj.type) {
-            case "Saída":
+            case "Despesas":
               obj.value = -valueValue;
               break;
             case "Entrada":

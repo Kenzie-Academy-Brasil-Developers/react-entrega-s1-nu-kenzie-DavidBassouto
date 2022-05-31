@@ -1,17 +1,17 @@
 import "./style.css";
 import CardVazio from "../CardVazio";
 import Card from "../Card";
+import Despesa from "../CardDespesa";
 
 function List({ listTransactions, deleteTransaction }) {
   function filterTransaction(transactionType) {
     const filteredItens = listTransactions.filter(
-      (item) => (item.type === transactionType)
+      (item) => item.type === transactionType
     );
-    console.log(filteredItens)
-    return(
-      filteredItens.map((item,index)=>
-      <Card item={item} key={index} deleteTransaction={deleteTransaction} />)
-    )
+    console.log(filteredItens);
+    return filteredItens.map((item, index) => (
+      <Card item={item} key={index} deleteTransaction={deleteTransaction} />
+    ));
   }
   return (
     <>
@@ -29,16 +29,26 @@ function List({ listTransactions, deleteTransaction }) {
               <button onClick={() => filterTransaction("Entrada")}>
                 Entrada
               </button>
-              <button onClick={() => filterTransaction("Saída")}>Saída</button>
+              <button onClick={() => filterTransaction("Despesas")}>
+                Despesas
+              </button>
             </div>
           </div>
-          {listTransactions.map((item, index) => (
-            <Card
-              item={item}
-              key={index}
-              deleteTransaction={deleteTransaction}
-            />
-          ))}
+          {listTransactions.map((item, index) =>
+            item.type === "Entrada" ? (
+              <Card
+                item={item}
+                key={index}
+                deleteTransaction={deleteTransaction}
+              />
+            ) : (
+              <Despesa
+                item={item}
+                key={index}
+                deleteTransaction={deleteTransaction}
+              />
+            )
+          )}
         </div>
       )}
     </>
