@@ -1,5 +1,7 @@
 import "./style.css";
-function Card({ item, index }) {
+import trash from "../../img/trash.svg";
+
+function Card({ item, index, deleteTransaction }) {
   return (
     <div className="card" id={index}>
       <div className="card-color"></div>
@@ -11,7 +13,9 @@ function Card({ item, index }) {
         <span>R${item.value}</span>
       </div>
       <div>
-        <button>X</button>
+        <button className="btn-trash" onClick={() => deleteTransaction(item)}>
+          <img src={trash} alt="" />
+        </button>
       </div>
     </div>
   );

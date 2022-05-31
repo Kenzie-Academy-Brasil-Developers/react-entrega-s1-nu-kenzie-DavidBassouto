@@ -44,6 +44,16 @@
   width: 20%;
   height: 100%;
 }
+.btn-trash:hover{
+  width:15px
+}
+.btn-trash:hover{
+background:none;
+box-sizing: border-box;
+box-shadow: none;
+border:none
+
+}
 span {
   font-family: "Nunito";
   font-style: normal;

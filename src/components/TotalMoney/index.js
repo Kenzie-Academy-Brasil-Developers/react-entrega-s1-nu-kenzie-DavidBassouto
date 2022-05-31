@@ -1,7 +1,7 @@
 import "./style.css";
 function TotalMoney({ listTransactions }) {
   const total = listTransactions.reduce((valorAnterior, acc) => {
-    return acc.value + valorAnterior;
+    return Number(acc.value) + Number(valorAnterior);
   }, 0);
 
   return (

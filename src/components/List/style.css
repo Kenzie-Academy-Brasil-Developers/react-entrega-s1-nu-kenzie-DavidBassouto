@@ -16,6 +16,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+}
+.extrato-cabecalho--descricao p {
   text-overflow: clip;
   font-family: "Nunito";
   font-style: normal;
@@ -54,4 +57,9 @@
 .extrato-cabecalho--categoria button:hover {
   background-color: #fd377e;
   color: white;
+}
+.extrato-cabecalho--categoria button:active {
+  background-color: #6e213d;
+  color: white;
+  box-shadow: 1px 2px 3px black;
 }

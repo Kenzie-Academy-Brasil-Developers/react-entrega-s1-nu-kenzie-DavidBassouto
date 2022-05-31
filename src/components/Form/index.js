@@ -4,9 +4,12 @@ Input para pegar a descrição.
 Select para escolher entre entrada e saída.
 Button para enviar as informações captadas no formulário.
 */
+import { useState } from "react";
 import "./style.css";
-function Form({ listTransactions, handleTransactions }) {
-  const [description, type, value] = listTransactions;
+function Form({ handleTransactions }) {
+  const [valueDesc, setValueDesc] = useState("");
+  const [valueValue, setValueValue] = useState("");
+  const [valueType, setValueType] = useState("Entrada");
 
   return (
     <form
@@ -19,33 +22,49 @@ function Form({ listTransactions, handleTransactions }) {
         type="text"
         className="descricao"
         placeholder="Digite aqui sua descrição"
-        onChange={(event) => handleTransactions(event.target.value)}
+        onChange={(event) => setValueDesc(event.target.value)}
       ></input>
       <small>Ex:Compra de roupas</small>
 
       <div className="container-valor">
-      <div className='container-valor--tipo'>
+        <div className="container-valor--tipo">
           <label>Valor</label>
           <input
             type="number"
             className="valor"
-            onChange={(event) => handleTransactions(event.target.value)}
+            onChange={(event) => setValueValue(event.target.value)}
           ></input>
         </div>
-        <div className='container-valor--tipo'>
+        <div className="container-valor--tipo">
           <label>Tipo de Valor</label>
-          <select onChange={(event) => handleTransactions(event.target.value)}>
+          <select onChange={(event) => setValueType(event.target.value)}>
             <option>Entrada</option>
             <option>Saída</option>
           </select>
         </div>
       </div>
       <button
-            onClick={() => handleTransactions(description, type, value)}
-            type="submit"
-          >
-            Inserir Valor
-          </button>
+        onClick={() => {
+          const obj = {
+            description: valueDesc,
+            type: valueType,
+            value: valueValue,
+          };
+          switch (obj.type) {
+            case "Saída":
+              obj.value = -valueValue;
+              break;
+            case "Entrada":
+              obj.value = valueValue;
+              break;
+            default:
+              break;
+          }
+          handleTransactions(obj);
+        }}
+      >
+        Inserir Valor
+      </button>
     </form>
   );
 }

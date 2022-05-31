@@ -1,39 +1,22 @@
-import { useState } from "react";
 import "./reset.css";
+import Home from "./Pages/home";
+import Dashboard from "./Pages/Dashboard";
+import { useState } from "react";
 import "./App.css";
-import Form from "./components/Form";
-import List from "./components/List";
-import TotalMoney from "./components/TotalMoney";
 
 function App() {
-  const [listTransactions, setListTransactions] = useState([
-    { description: "Salário recebido", type: "entrada", value: 2500 },
-    { description: "Conta de luz", type: "saída", value: -150 },
-  ]);
-  function handleTransactions(newTransaction) {
-    setListTransactions([...listTransactions, newTransaction]);
+  const [login, setLogin] = useState(true);
+  function handleLogin() {
+    setLogin(!login);
   }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src=".././/img/NuKenzie.svg" alt="" />
-        <button>Início</button>
-      </header>
-      <main>
-        <div className="container-form-total">
-          <div className="container-form">
-            <Form
-              listTransactions={listTransactions}
-              handleTransactions={handleTransactions}
-            />
-          </div>
-          <TotalMoney listTransactions={listTransactions} />
-        </div>
-        <div className="container-list">
-          <List listTransactions={listTransactions} />
-        </div>
-      </main>
-    </div>
+    <>
+      {login ? (
+        <Home handleLogin={handleLogin} />
+      ) : (
+        <Dashboard handleLogin={handleLogin} />
+      )}
+    </>
   );
 }
 

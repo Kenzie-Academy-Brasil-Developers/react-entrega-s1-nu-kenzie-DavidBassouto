@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+
 .App-header {
   background-color: #f8f9fa;
   width: 100%;
@@ -18,9 +19,7 @@
   border: none;
   border-radius: 10px;
 }
-
 .App-header img {
-  background-color: aqua;
   width: 120px;
   height: 20px;
 }
@@ -32,13 +31,21 @@ main {
   align-items: center;
   width: 90%;
   gap: 15px;
+  margin: auto;
 }
 button {
   cursor: pointer;
   font-family: "Inter";
   font-style: normal;
 }
-
+button:hover {
+  background-color: #fd377e;
+  color: white;
+  box-shadow: 1px 2px 3px black;
+}
+.container-form-total {
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   .App-header {
     padding: 0 12% 0 12%;
@@ -47,7 +54,7 @@ button {
   main {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
     width: 90%;
     margin: auto;
@@ -69,5 +76,9 @@ button {
   .extrato-cabecalho--descricao {
     width: 65%;
   }
-  
 }
+    button:active {
+      background-color: #6e213d;
+      color: white;
+      box-shadow: 1px 2px 3px black;
+    }
